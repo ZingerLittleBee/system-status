@@ -1,13 +1,21 @@
 import test from 'ava'
 
-import { Stat } from '../index'
+import { Stat, Unit } from '../index'
 
 test('Stat', (t) => {
-  const ostat = new Stat()
-  ostat.cpuLoad()
+  const ostat = new Stat({ decimal: 2, unit: Unit.KB })
+  const cpuLoadAggregate = ostat.cpuLoadAggregate()
+  Object.values(cpuLoadAggregate)?.forEach((value) => {
+    t.true(value >= 0)
+  })
   ostat.socketStats()
   ostat.uptime()
   ostat.loadAverage()
   ostat.swap()
+  // ostat.blockDeviceStatistics()
+  ostat.networks().forEach((n) => {
+    t.log(`name: ${n.name}`)
+    n.addrs.forEach((addr) => t.log(`addr: ${addr.addr} ${addr.addrType} ${addr.netmask}`))
+  })
   t.pass()
 })

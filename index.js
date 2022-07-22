@@ -218,6 +218,8 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { Stat } = nativeBinding
+const { _AddrType, Stat, Unit } = nativeBinding
 
+module.exports._AddrType = _AddrType
 module.exports.Stat = Stat
+module.exports.Unit = Unit

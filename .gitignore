@@ -128,3 +128,4 @@ Cargo.lock
 
 # IDE
 .history
+.idea
