@@ -105,3 +105,26 @@ impl From<&Network> for _Network {
     }
   }
 }
+
+#[napi(object, js_name = "Memory")]
+pub struct _Memory {
+  pub free: BigInt,
+  pub total: BigInt,
+  pub used: BigInt,
+}
+
+#[napi(object, js_name = "LoadAverage")]
+pub struct _LoadAverage {
+  pub one: f64,
+  pub five: f64,
+  pub fifteen: f64,
+}
+
+#[napi(object, js_name = "SocketStats")]
+pub struct _SocketStats {
+  pub tcp_sockets_in_use: BigInt,
+  pub tcp_sockets_orphaned: BigInt,
+  pub udp_sockets_in_use: BigInt,
+  pub tcp6_sockets_in_use: BigInt,
+  pub udp6_sockets_in_use: BigInt,
+}

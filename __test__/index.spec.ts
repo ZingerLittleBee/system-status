@@ -9,7 +9,7 @@ test('Stat', (t) => {
     t.true(value >= 0)
   })
   ostat.socketStats()
-  ostat.uptime()
+
   ostat.loadAverage()
   ostat.swap()
   // ostat.blockDeviceStatistics()
@@ -17,5 +17,8 @@ test('Stat', (t) => {
     t.log(`name: ${n.name}`)
     n.addrs.forEach((addr) => t.log(`addr: ${addr.addr} ${addr.addrType} ${addr.netmask}`))
   })
+  t.log(ostat.memory())
+  t.log(ostat.uptime())
+  t.log(ostat.bootTime())
   t.pass()
 })

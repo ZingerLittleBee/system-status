@@ -43,6 +43,28 @@ export interface Network {
   name: string
   addrs: Array<NetworkAddrs>
 }
+export interface Memory {
+  free: bigint
+  total: bigint
+  used: bigint
+}
+export interface LoadAverage {
+  one: number
+  five: number
+  fifteen: number
+}
+export interface SocketStats {
+  tcpSocketsInUse: bigint
+  tcpSocketsOrphaned: bigint
+  udpSocketsInUse: bigint
+  tcp6SocketsInUse: bigint
+  udp6SocketsInUse: bigint
+}
+/**
+ * unit enum for stat option
+ * B -> KB, 1000 bytes
+ * B -> KIB, 1024 bytes
+ */
 export const enum Unit {
   B = 0,
   KB = 1,
@@ -62,15 +84,33 @@ export interface StatOption {
   decimal: number
 }
 export class Stat {
+  /** Create stat instance. */
   constructor(option?: StatOption | undefined | null)
+  /** Set stat option, such as unit and decimal. */
   setOption(option: StatOption): void
+  /** Get filesystem mount information. */
   mounts(): Array<FileSystem>
+  /** Get a filesystem mount information for the filesystem at a given path. */
   mountAt(at: string): FileSystem
-  blockDeviceStatistics(): void
+  /** Get network intefrace information. */
   networks(): Array<Network>
+  /** Get memory information. */
+  memory(): Memory
+  /** Get swap memory information. */
+  swap(): Memory
+  /** Get load average. */
+  loadAverage(): LoadAverage
+  /** Get the system uptime. */
+  uptime(): bigint
+  /** Get the system boot time. */
+  bootTime(): Date
+  /** Get CPU load statistics, average over all CPUs (cores). */
   cpuLoadAggregate(): CPULoad
-  loadAverage(): void
-  socketStats(): void
-  uptime(): void
-  swap(): void
+  /**
+   * Get the current CPU temperature in degrees Celsius.
+   * Depending on the platform, this might be core 0, package, etc.
+   */
+  cpuTemp(): number
+  /** Get information about the number of sockets in use */
+  socketStats(): SocketStats
 }
