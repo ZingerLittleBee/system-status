@@ -11,6 +11,8 @@ crate-type = ["cdylib"]
 napi = { version = "2", default-features = false, features = ["napi6", "chrono_date"] }
 napi-derive = "2"
 systemstat = "0.1.11"
+strum = "0.24"
+strum_macros = "0.24"
 
 [build-dependencies]
 napi-build = "2"
