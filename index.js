@@ -218,9 +218,9 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { Advance, _AddrType, Stat, format } = nativeBinding
+const { Advance, AddrType, Stat, format } = nativeBinding
 
 module.exports.Advance = Advance
-module.exports._AddrType = _AddrType
+module.exports.AddrType = AddrType
 module.exports.Stat = Stat
 module.exports.format = format

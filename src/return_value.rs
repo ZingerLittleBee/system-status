@@ -53,7 +53,7 @@ impl From<&Filesystem> for _FileSystem {
   }
 }
 
-#[napi]
+#[napi(js_name = "AddrType")]
 pub enum _AddrType {
   Ipv4,
   IPv6,
