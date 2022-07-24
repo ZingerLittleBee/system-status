@@ -15,6 +15,41 @@
 - network traffic statistics
 - CPU temperature
 
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Support Operating Systems](#support-operating-systems)
+  - [Installation](#installation)
+- [Goods](#goods)
+- [Documentation](#documentation)
+  - [`mounts`](#mounts)
+  - [`mountAt`](#mountat)
+  - [`networks`](#networks)
+  - [`memory`](#memory)
+  - [`swap`](#swap)
+  - [`loadAverage`](#loadaverage)
+  - [`uptime`](#uptime)
+  - [`bootTime`](#boottime)
+  - [`cpuLoadAggregate`](#cpuloadaggregate)
+  - [`cpuTemp`](#cputemp)
+  - [`socketStats`](#socketstats)
+  - [`format`](#format)
+  - [`FileSystem` (Type)](#filesystem-type)
+  - [`Network` (Type)](#network-type)
+  - [`Memory` (Type)](#memory-type)
+  - [`LoadAverage` (Type)](#loadaverage-type)
+  - [`CPULoad` (Type)](#cpuload-type)
+  - [`ConvertResult` (Type)](#convertresult-type)
+  - [`ConvertOption` (Type)](#convertoption-type)
+- [How to Develop](#how-to-develop)
+  - [Development requirements](#development-requirements)
+  - [Test in local](#test-in-local)
+- [Release Notes](#release-notes)
+- [Thanks](#thanks)
+
 
 ## Getting Started
 ### Prerequisites
@@ -255,13 +290,15 @@ export const enum Advance {
 ```
 
 
-## Develop requirements
+## How to Develop
+
+### Development requirements
 
 - Install the latest `Rust`
 - Install `Node.js@10+` which fully supported `Node-API`
 - Install `yarn@1.x`
 
-## Test in local
+### Test in local
 
 - yarn
 - yarn build
