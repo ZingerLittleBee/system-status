@@ -82,21 +82,21 @@ export interface SocketStats {
 }
 export interface BlockDeviceStats {
   name: string
-  readIos: string
-  readMerges: string
-  readSectors: string
-  readTicks: string
-  writeIos: string
-  writeMerges: string
-  writeSectors: string
-  writeTicks: string
-  inFlight: string
-  ioTicks: string
-  timeInQueue: string
+  readIos: bigint
+  readMerges: bigint
+  readSectors: bigint
+  readTicks: bigint
+  writeIos: bigint
+  writeMerges: bigint
+  writeSectors: bigint
+  writeTicks: bigint
+  inFlight: bigint
+  ioTicks: bigint
+  timeInQueue: bigint
 }
 export interface BatteryLife {
-  remainingCapacity: string
-  remainingTime: string
+  remainingCapacity: number
+  remainingTime: bigint
 }
 export function format(source: bigint, option?: ConvertOption | undefined | null): ConvertResult
 export class Stat {

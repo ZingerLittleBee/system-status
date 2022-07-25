@@ -133,40 +133,40 @@ pub struct _SocketStats {
 #[napi(object, js_name = "BlockDeviceStats")]
 pub struct _BlockDeviceStats {
   pub name: String,
-  pub read_ios: String,
-  pub read_merges: String,
-  pub read_sectors: String,
-  pub read_ticks: String,
-  pub write_ios: String,
-  pub write_merges: String,
-  pub write_sectors: String,
-  pub write_ticks: String,
-  pub in_flight: String,
-  pub io_ticks: String,
-  pub time_in_queue: String,
+  pub read_ios: BigInt,
+  pub read_merges: BigInt,
+  pub read_sectors: BigInt,
+  pub read_ticks: BigInt,
+  pub write_ios: BigInt,
+  pub write_merges: BigInt,
+  pub write_sectors: BigInt,
+  pub write_ticks: BigInt,
+  pub in_flight: BigInt,
+  pub io_ticks: BigInt,
+  pub time_in_queue: BigInt,
 }
 
 impl From<&BlockDeviceStats> for _BlockDeviceStats {
   fn from(b: &BlockDeviceStats) -> Self {
     _BlockDeviceStats {
       name: b.name.as_str().into(),
-      read_ios: b.read_ios.to_string(),
-      read_merges: b.read_merges.to_string(),
-      read_sectors: b.read_sectors.to_string(),
-      read_ticks: b.read_ticks.to_string(),
-      write_ios: b.write_ios.to_string(),
-      write_merges: b.write_merges.to_string(),
-      write_sectors: b.write_sectors.to_string(),
-      write_ticks: b.write_ticks.to_string(),
-      in_flight: b.in_flight.to_string(),
-      io_ticks: b.io_ticks.to_string(),
-      time_in_queue: b.time_in_queue.to_string(),
+      read_ios: BigInt::from(b.read_ios as u64),
+      read_merges: BigInt::from(b.read_merges as u64),
+      read_sectors: BigInt::from(b.read_sectors as u64),
+      read_ticks: BigInt::from(b.read_ticks as u64),
+      write_ios: BigInt::from(b.write_ios as u64),
+      write_merges: BigInt::from(b.write_merges as u64),
+      write_sectors: BigInt::from(b.write_sectors as u64),
+      write_ticks: BigInt::from(b.write_ticks as u64),
+      in_flight: BigInt::from(b.in_flight as u64),
+      io_ticks: BigInt::from(b.io_ticks as u64),
+      time_in_queue: BigInt::from(b.time_in_queue as u64),
     }
   }
 }
 
 #[napi(object, js_name = "BatteryLife")]
 pub struct _BatteryLife {
-  pub remaining_capacity: String,
-  pub remaining_time: String,
+  pub remaining_capacity: f64,
+  pub remaining_time: BigInt,
 }

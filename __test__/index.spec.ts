@@ -99,7 +99,8 @@ test('batteryLife', (t) => {
   let batteryLife
   try {
     batteryLife = ostat.batteryLife()
-    t.truthy(batteryLife)
+    t.true(batteryLife.remainingCapacity >= 0)
+    t.true(batteryLife.remainingTime >= 0)
   } catch {
     t.log('not support battery life')
     t.pass()

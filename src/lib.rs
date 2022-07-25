@@ -58,8 +58,8 @@ impl Stat {
   pub fn battery_life(&self) -> Result<_BatteryLife> {
     let bat = self.0.battery_life()?;
     Ok(_BatteryLife {
-      remaining_capacity: bat.remaining_capacity.to_string(),
-      remaining_time: bat.remaining_time.as_secs().to_string(),
+      remaining_capacity: bat.remaining_capacity as f64,
+      remaining_time: BigInt::from(bat.remaining_time.as_secs()),
     })
   }
 
