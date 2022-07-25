@@ -29,7 +29,6 @@ export interface CPULoad {
   system: number
   interrupt: number
   idle: number
-  iowait: number
 }
 export interface FileSystem {
   /** Used file nodes in filesystem */
@@ -108,7 +107,7 @@ export class Stat {
   mountAt(at: string): FileSystem
   /** Get block device statistics objects. */
   blockDeviceStatistics(): Array<BlockDeviceStats>
-  /** Get network intefrace information. */
+  /** Get network interface information. */
   networks(): Array<Network>
   /** Get a battery life information object. */
   batteryLife(): BatteryLife

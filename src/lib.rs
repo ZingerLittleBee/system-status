@@ -42,7 +42,7 @@ impl Stat {
     Ok(b.values().map(_BlockDeviceStats::from).collect())
   }
 
-  /// Get network intefrace information.
+  /// Get network interface information.
   #[napi]
   pub fn networks(&self) -> Result<Vec<_Network>> {
     let nets = self.0.networks()?;
@@ -117,15 +117,13 @@ impl Stat {
   #[napi]
   pub fn cpu_load_aggregate(&self) -> Result<_CPULoad> {
     let c = self.0.cpu_load_aggregate()?.done()?;
-    Ok(_CPULoad {
-      user: c.user as f64,
-      nice: c.nice as f64,
-      system: c.system as f64,
-      interrupt: c.interrupt as f64,
-      idle: c.idle as f64,
-      #[cfg(target_os = "linux")]
-      iowait: c.platform.iowait as f64,
-    })
+      Ok(_CPULoad {
+        user: c.user as f64,
+        nice: c.nice as f64,
+        system: c.system as f64,
+        interrupt: c.interrupt as f64,
+        idle: c.idle as f64,
+      })
   }
 
   /// Get the current CPU temperature in degrees Celsius.
