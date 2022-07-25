@@ -13,6 +13,7 @@ pub struct _CPULoad {
   pub system: f64,
   pub interrupt: f64,
   pub idle: f64,
+  #[cfg(target_os = "linux")]
   pub iowait: f64,
 }
 

@@ -123,6 +123,7 @@ impl Stat {
       system: c.system as f64,
       interrupt: c.interrupt as f64,
       idle: c.idle as f64,
+      #[cfg(target_os = "linux")]
       iowait: c.platform.iowait as f64,
     })
   }

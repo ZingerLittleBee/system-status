@@ -1,3 +1,5 @@
+import { platform } from 'os'
+
 import test from 'ava'
 
 import { format, Stat } from '../index'
@@ -54,7 +56,9 @@ test('cpuLoadAggregate', (t) => {
   t.true(cpuLoadAggregate.system >= 0)
   t.true(cpuLoadAggregate.interrupt >= 0)
   t.true(cpuLoadAggregate.idle >= 0)
-  t.true(cpuLoadAggregate.iowait >= 0)
+  if (platform() === 'linux') {
+    t.true(cpuLoadAggregate.iowait >= 0)
+  }
 })
 
 test('cpuTemp', (t) => {
