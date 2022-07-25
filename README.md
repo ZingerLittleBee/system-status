@@ -30,6 +30,7 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
   - [***`mountAt`*** (Stat class instance method)](#mountat-stat-class-instance-method)
   - [***`blockDeviceStatistics`*** (Stat class instance method)](#blockdevicestatistics-stat-class-instance-method)
   - [***`networks`*** (Stat class instance method)](#networks-stat-class-instance-method)
+  - [***`networkStats`*** (Stat class instance method)](#networkstats-stat-class-instance-method)
   - [***`batteryLife`*** (Stat class instance method)](#batterylife-stat-class-instance-method)
   - [***`isAcPower`*** (Stat class instance method)](#isacpower-stat-class-instance-method)
   - [***`memory`*** (Stat class instance method)](#memory-stat-class-instance-method)
@@ -44,6 +45,7 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
   - [***`FileSystem`*** (Type)](#filesystem-type)
   - [***`BlockDeviceStats`*** (Type)](#blockdevicestats-type)
   - [***`Network`*** (Type)](#network-type)
+  - [***`NetworkStats`*** (Type)](#networkstats-type)
   - [***`BatteryLife`*** (Type)](#batterylife-type)
   - [***`Memory`*** (Type)](#memory-type)
   - [***`LoadAverage`*** (Type)](#loadaverage-type)
@@ -106,6 +108,12 @@ blockDeviceStatistics(): Array<BlockDeviceStats>
 Get network intefrace information.
 ```typescript
 networks(): Array<Network>
+```
+
+### ***`networkStats`*** (Stat class instance method)
+Get statistics for a given interface name (bytes/packets sent/received).
+```typescript
+networkStats(interface: string): NetworkStats
 ```
 
 ### ***`batteryLife`*** (Stat class instance method)
@@ -241,6 +249,18 @@ const enum AddrType {
 }
 ```
 
+### ***`NetworkStats`*** (Type)
+```typescript
+interface NetworkStats {
+  rxBytes: bigint
+  txBytes: bigint
+  rxPackets: bigint
+  txPackets: bigint
+  rxErrors: bigint
+  txErrors: bigint
+}
+```
+
 ### ***`BatteryLife`*** (Type)
 ```typescript
 interface BatteryLife {
@@ -275,7 +295,6 @@ interface CPULoad {
   system: number
   interrupt: number
   idle: number
-  iowait: number
 }
 ```
 

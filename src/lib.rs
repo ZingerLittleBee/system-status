@@ -5,7 +5,7 @@ use converter::{ConvertOption, ConvertResult, Converter};
 use napi::bindgen_prelude::BigInt;
 use napi::Result;
 use napi_derive::napi;
-use return_value::_BatteryLife;
+use return_value::{_BatteryLife, _NetworkStats};
 use return_value::{_CPULoad, _FileSystem, _LoadAverage, _Memory, _Network, _SocketStats};
 use systemstat::{saturating_sub_bytes, DateTime, Platform, System, Utc};
 
@@ -47,6 +47,13 @@ impl Stat {
   pub fn networks(&self) -> Result<Vec<_Network>> {
     let nets = self.0.networks()?;
     Ok(nets.values().map(_Network::from).collect())
+  }
+
+  /// Get statistics for a given interface (bytes/packets sent/received)
+  #[napi]
+  pub fn network_stats(&self, interface: String) -> Result<_NetworkStats> {
+    let net_stats = self.0.network_stats(&interface)?;
+    Ok(_NetworkStats::from(net_stats))
   }
 
   /// Get a battery life information object.
@@ -117,13 +124,13 @@ impl Stat {
   #[napi]
   pub fn cpu_load_aggregate(&self) -> Result<_CPULoad> {
     let c = self.0.cpu_load_aggregate()?.done()?;
-      Ok(_CPULoad {
-        user: c.user as f64,
-        nice: c.nice as f64,
-        system: c.system as f64,
-        interrupt: c.interrupt as f64,
-        idle: c.idle as f64,
-      })
+    Ok(_CPULoad {
+      user: c.user as f64,
+      nice: c.nice as f64,
+      system: c.system as f64,
+      interrupt: c.interrupt as f64,
+      idle: c.idle as f64,
+    })
   }
 
   /// Get the current CPU temperature in degrees Celsius.

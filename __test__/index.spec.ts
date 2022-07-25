@@ -1,5 +1,3 @@
-import { platform } from 'os'
-
 import test from 'ava'
 
 import { format, Stat } from '../index'
@@ -56,9 +54,6 @@ test('cpuLoadAggregate', (t) => {
   t.true(cpuLoadAggregate.system >= 0)
   t.true(cpuLoadAggregate.interrupt >= 0)
   t.true(cpuLoadAggregate.idle >= 0)
-  if (platform() === 'linux') {
-    t.true(cpuLoadAggregate.iowait >= 0)
-  }
 })
 
 test('cpuTemp', (t) => {
@@ -118,6 +113,22 @@ test('isAcPower', (t) => {
     t.is(typeof isAcPower === 'boolean', true)
   } catch {
     t.log('not support AC power')
+    t.pass()
+  }
+})
+
+test('networkStats', (t) => {
+  let networkStats
+  try {
+    networkStats = ostat.networkStats('eth0')
+    t.true(networkStats.rxBytes >= 0)
+    t.true(networkStats.txBytes >= 0)
+    t.true(networkStats.rxPackets >= 0)
+    t.true(networkStats.txPackets >= 0)
+    t.true(networkStats.rxErrors >= 0)
+    t.true(networkStats.txErrors >= 0)
+  } catch {
+    t.log('not support network stats or eth0 not exist')
     t.pass()
   }
 })

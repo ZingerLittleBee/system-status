@@ -5,6 +5,7 @@ use systemstat::BlockDeviceStats;
 use systemstat::Filesystem;
 use systemstat::Network;
 use systemstat::NetworkAddrs;
+use systemstat::NetworkStats;
 
 #[napi(object, js_name = "CPULoad")]
 pub struct _CPULoad {
@@ -98,6 +99,29 @@ impl From<&Network> for _Network {
     _Network {
       name: String::from(network.name.as_str()),
       addrs,
+    }
+  }
+}
+
+#[napi(object, js_name = "NetworkStats")]
+pub struct _NetworkStats {
+  pub rx_bytes: BigInt,
+  pub tx_bytes: BigInt,
+  pub rx_packets: BigInt,
+  pub tx_packets: BigInt,
+  pub rx_errors: BigInt,
+  pub tx_errors: BigInt,
+}
+
+impl From<NetworkStats> for _NetworkStats {
+  fn from(net_stats: NetworkStats) -> Self {
+    _NetworkStats {
+      rx_bytes: BigInt::from(net_stats.rx_bytes.as_u64()),
+      tx_bytes: BigInt::from(net_stats.tx_bytes.as_u64()),
+      rx_packets: BigInt::from(net_stats.rx_packets as u64),
+      tx_packets: BigInt::from(net_stats.tx_packets as u64),
+      rx_errors: BigInt::from(net_stats.rx_errors as u64),
+      tx_errors: BigInt::from(net_stats.tx_errors as u64),
     }
   }
 }

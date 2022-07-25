@@ -12,7 +12,7 @@ export const enum Advance {
   /** 1000 */
   Kilobase = 1000,
   /** 1024 */
-  Binary = 1024
+  Binary = 1024,
 }
 export interface ConvertOption {
   advance: Advance
@@ -51,7 +51,7 @@ export interface FileSystem {
 }
 export const enum AddrType {
   Ipv4 = 0,
-  IPv6 = 1
+  IPv6 = 1,
 }
 export interface NetworkAddrs {
   addr: string
@@ -61,6 +61,14 @@ export interface NetworkAddrs {
 export interface Network {
   name: string
   addrs: Array<NetworkAddrs>
+}
+export interface NetworkStats {
+  rxBytes: bigint
+  txBytes: bigint
+  rxPackets: bigint
+  txPackets: bigint
+  rxErrors: bigint
+  txErrors: bigint
 }
 export interface Memory {
   free: bigint
@@ -109,6 +117,8 @@ export class Stat {
   blockDeviceStatistics(): Array<BlockDeviceStats>
   /** Get network interface information. */
   networks(): Array<Network>
+  /** Get statistics for a given interface (bytes/packets sent/received) */
+  networkStats(interface: string): NetworkStats
   /** Get a battery life information object. */
   batteryLife(): BatteryLife
   /** Get whether AC power is plugged in. */

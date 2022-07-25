@@ -30,6 +30,7 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
   - [***`mountAt`*** (Stat 类实例方法)](#mountat-stat-类实例方法)
   - [***`blockDeviceStatistics`*** (Stat 类实例方法)](#blockdevicestatistics-stat-类实例方法)
   - [***`networks`*** (Stat 类实例方法)](#networks-stat-类实例方法)
+  - [***`networkStats`*** (Stat 类实例方法)](#networkstats-stat-类实例方法)
   - [***`batteryLife`*** (Stat 类实例方法)](#batterylife-stat-类实例方法)
   - [***`isAcPower`*** (Stat 类实例方法)](#isacpower-stat-类实例方法)
   - [***`memory`*** (Stat 类实例方法)](#memory-stat-类实例方法)
@@ -44,6 +45,7 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
   - [***`FileSystem`*** (类型)](#filesystem-类型)
   - [***`BlockDeviceStats`*** (类型)](#blockdevicestats-类型)
   - [***`Network`*** (类型)](#network-类型)
+  - [***`NetworkStats`*** (类型)](#networkstats-类型)
   - [***`BatteryLife`*** (类型)](#batterylife-类型)
   - [***`Memory`*** (类型)](#memory-类型)
   - [***`LoadAverage`*** (类型)](#loadaverage-类型)
@@ -106,6 +108,12 @@ blockDeviceStatistics(): Array<BlockDeviceStats>
 获取网络信息
 ```typescript
 networks(): Array<Network>
+```
+
+### ***`networkStats`*** (Stat 类实例方法)
+获取给定接口名称的统计信息 (发送/接收的字节/数据包)
+```typescript
+networkStats(interface: string): NetworkStats
 ```
 
 ### ***`batteryLife`*** (Stat 类实例方法)
@@ -242,6 +250,18 @@ const enum AddrType {
 }
 ```
 
+### ***`NetworkStats`*** (类型)
+```typescript
+interface NetworkStats {
+  rxBytes: bigint
+  txBytes: bigint
+  rxPackets: bigint
+  txPackets: bigint
+  rxErrors: bigint
+  txErrors: bigint
+}
+```
+
 ### ***`BatteryLife`*** (类型)
 ```typescript
 interface BatteryLife {
@@ -276,7 +296,6 @@ interface CPULoad {
   system: number
   interrupt: number
   idle: number
-  iowait: number
 }
 ```
 
