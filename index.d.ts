@@ -80,6 +80,24 @@ export interface SocketStats {
   tcp6SocketsInUse: bigint
   udp6SocketsInUse: bigint
 }
+export interface BlockDeviceStats {
+  name: string
+  readIos: string
+  readMerges: string
+  readSectors: string
+  readTicks: string
+  writeIos: string
+  writeMerges: string
+  writeSectors: string
+  writeTicks: string
+  inFlight: string
+  ioTicks: string
+  timeInQueue: string
+}
+export interface BatteryLife {
+  remainingCapacity: string
+  remainingTime: string
+}
 export function format(source: bigint, option?: ConvertOption | undefined | null): ConvertResult
 export class Stat {
   /** Create stat instance. */
@@ -88,8 +106,14 @@ export class Stat {
   mounts(): Array<FileSystem>
   /** Get a filesystem mount information for the filesystem at a given path. */
   mountAt(at: string): FileSystem
+  /** Get block device statistics objects. */
+  blockDeviceStatistics(): Array<BlockDeviceStats>
   /** Get network intefrace information. */
   networks(): Array<Network>
+  /** Get a battery life information object. */
+  batteryLife(): BatteryLife
+  /** Get whether AC power is plugged in. */
+  isAcPower(): boolean
   /** Get memory information. */
   memory(): Memory
   /** Get swap memory information. */

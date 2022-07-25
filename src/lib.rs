@@ -9,8 +9,11 @@ use converter::Converter;
 use napi::bindgen_prelude::BigInt;
 use napi::Result;
 use napi_derive::napi;
+use return_value::_BatteryLife;
 use return_value::{_CPULoad, _FileSystem, _LoadAverage, _Memory, _Network, _SocketStats};
 use systemstat::{saturating_sub_bytes, DateTime, Platform, System, Utc};
+
+use crate::return_value::_BlockDeviceStats;
 #[napi]
 pub struct Stat(System);
 
@@ -36,8 +39,11 @@ impl Stat {
     Ok(_FileSystem::from(&m))
   }
 
-  fn block_device_statistics(&self) {
-    todo!();
+  /// Get block device statistics objects.
+  #[napi]
+  pub fn block_device_statistics(&self) -> Result<Vec<_BlockDeviceStats>> {
+    let b = self.0.block_device_statistics()?;
+    Ok(b.values().map(|b| _BlockDeviceStats::from(b)).collect())
   }
 
   /// Get network intefrace information.
@@ -47,12 +53,21 @@ impl Stat {
     Ok(nets.values().map(|netif| _Network::from(netif)).collect())
   }
 
-  fn battery_life() {
-    todo!();
+  /// Get a battery life information object.
+  #[napi]
+  pub fn battery_life(&self) -> Result<_BatteryLife> {
+    let bat = self.0.battery_life()?;
+    Ok(_BatteryLife {
+      remaining_capacity: bat.remaining_capacity.to_string(),
+      remaining_time: bat.remaining_time.as_secs().to_string(),
+    })
   }
 
-  fn on_ac_power() {
-    todo!();
+  /// Get whether AC power is plugged in.
+  #[napi]
+  pub fn is_ac_power(&self) -> Result<bool> {
+    let on_ac_power = self.0.on_ac_power()?;
+    Ok(on_ac_power)
   }
 
   /// Get memory information.

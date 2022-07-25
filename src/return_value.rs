@@ -1,6 +1,7 @@
 use napi::bindgen_prelude::BigInt;
 use napi::bindgen_prelude::ToNapiValue;
 use napi_derive::napi;
+use systemstat::BlockDeviceStats;
 use systemstat::Filesystem;
 use systemstat::Network;
 use systemstat::NetworkAddrs;
@@ -127,4 +128,45 @@ pub struct _SocketStats {
   pub udp_sockets_in_use: BigInt,
   pub tcp6_sockets_in_use: BigInt,
   pub udp6_sockets_in_use: BigInt,
+}
+
+#[napi(object, js_name = "BlockDeviceStats")]
+pub struct _BlockDeviceStats {
+  pub name: String,
+  pub read_ios: String,
+  pub read_merges: String,
+  pub read_sectors: String,
+  pub read_ticks: String,
+  pub write_ios: String,
+  pub write_merges: String,
+  pub write_sectors: String,
+  pub write_ticks: String,
+  pub in_flight: String,
+  pub io_ticks: String,
+  pub time_in_queue: String,
+}
+
+impl From<&BlockDeviceStats> for _BlockDeviceStats {
+  fn from(b: &BlockDeviceStats) -> Self {
+    _BlockDeviceStats {
+      name: b.name.as_str().into(),
+      read_ios: b.read_ios.to_string(),
+      read_merges: b.read_merges.to_string(),
+      read_sectors: b.read_sectors.to_string(),
+      read_ticks: b.read_ticks.to_string(),
+      write_ios: b.write_ios.to_string(),
+      write_merges: b.write_merges.to_string(),
+      write_sectors: b.write_sectors.to_string(),
+      write_ticks: b.write_ticks.to_string(),
+      in_flight: b.in_flight.to_string(),
+      io_ticks: b.io_ticks.to_string(),
+      time_in_queue: b.time_in_queue.to_string(),
+    }
+  }
+}
+
+#[napi(object, js_name = "BatteryLife")]
+pub struct _BatteryLife {
+  pub remaining_capacity: String,
+  pub remaining_time: String,
 }

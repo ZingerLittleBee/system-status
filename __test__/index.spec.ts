@@ -90,3 +90,29 @@ test('format', (t) => {
   t.true(r.value === '1.0')
   t.true(r.unit === 'MIB')
 })
+
+test('blockDeviceStatistics', (t) => {
+  t.true(ostat.blockDeviceStatistics().length > 0)
+})
+
+test('batteryLife', (t) => {
+  let batteryLife
+  try {
+    batteryLife = ostat.batteryLife()
+    t.truthy(batteryLife)
+  } catch {
+    t.log('not support battery life')
+    t.pass()
+  }
+})
+
+test('isAcPower', (t) => {
+  let isAcPower
+  try {
+    isAcPower = ostat.isAcPower()
+    t.is(typeof isAcPower === 'boolean', true)
+  } catch {
+    t.log('not support AC power')
+    t.pass()
+  }
+})
