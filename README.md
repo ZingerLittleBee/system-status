@@ -1,3 +1,5 @@
+Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
+
 <h1 align="center">ostat</h1>
 
 ## Overview
@@ -23,27 +25,31 @@
   - [Prerequisites](#prerequisites)
   - [Support Operating Systems](#support-operating-systems)
   - [Installation](#installation)
-- [Goods](#goods)
 - [Documentation](#documentation)
-  - [`mounts`](#mounts)
-  - [`mountAt`](#mountat)
-  - [`networks`](#networks)
-  - [`memory`](#memory)
-  - [`swap`](#swap)
-  - [`loadAverage`](#loadaverage)
-  - [`uptime`](#uptime)
-  - [`bootTime`](#boottime)
-  - [`cpuLoadAggregate`](#cpuloadaggregate)
-  - [`cpuTemp`](#cputemp)
-  - [`socketStats`](#socketstats)
-  - [`format`](#format)
-  - [`FileSystem` (Type)](#filesystem-type)
-  - [`Network` (Type)](#network-type)
-  - [`Memory` (Type)](#memory-type)
-  - [`LoadAverage` (Type)](#loadaverage-type)
-  - [`CPULoad` (Type)](#cpuload-type)
-  - [`ConvertResult` (Type)](#convertresult-type)
-  - [`ConvertOption` (Type)](#convertoption-type)
+  - [***`mounts`*** (Stat class instance method)](#mounts-stat-class-instance-method)
+  - [***`mountAt`*** (Stat class instance method)](#mountat-stat-class-instance-method)
+  - [***`blockDeviceStatistics`*** (Stat class instance method)](#blockdevicestatistics-stat-class-instance-method)
+  - [***`networks`*** (Stat class instance method)](#networks-stat-class-instance-method)
+  - [***`batteryLife`*** (Stat class instance method)](#batterylife-stat-class-instance-method)
+  - [***`isAcPower`*** (Stat class instance method)](#isacpower-stat-class-instance-method)
+  - [***`memory`*** (Stat class instance method)](#memory-stat-class-instance-method)
+  - [***`swap`*** (Stat class instance method)](#swap-stat-class-instance-method)
+  - [***`loadAverage`*** (Stat class instance method)](#loadaverage-stat-class-instance-method)
+  - [***`uptime`*** (Stat class instance method)](#uptime-stat-class-instance-method)
+  - [***`bootTime`*** (Stat class instance method)](#boottime-stat-class-instance-method)
+  - [***`cpuLoadAggregate`*** (Stat class instance method)](#cpuloadaggregate-stat-class-instance-method)
+  - [***`cpuTemp`*** (Stat class instance method)](#cputemp-stat-class-instance-method)
+  - [***`socketStats`*** (Stat class instance method)](#socketstats-stat-class-instance-method)
+  - [***`format`*** (Function)](#format-function)
+  - [***`FileSystem`*** (Type)](#filesystem-type)
+  - [***`BlockDeviceStats`*** (Type)](#blockdevicestats-type)
+  - [***`Network`*** (Type)](#network-type)
+  - [***`BatteryLife`*** (Type)](#batterylife-type)
+  - [***`Memory`*** (Type)](#memory-type)
+  - [***`LoadAverage`*** (Type)](#loadaverage-type)
+  - [***`CPULoad`*** (Type)](#cpuload-type)
+  - [***`ConvertResult`*** (Type)](#convertresult-type)
+  - [***`ConvertOption`*** (Type)](#convertoption-type)
 - [How to Develop](#how-to-develop)
   - [Development requirements](#development-requirements)
   - [Test in local](#test-in-local)
@@ -73,108 +79,97 @@ yarn add ostat
 pnpm i ostat
 ```
 
-## Goods
-Class: `Stat`
-  - [`mounts`](#mounts)
-  - [`mountAt`](#mountat)
-  - [`networks`](#network)
-  - [`memory`](#memory)
-  - [`swap`](#swap)
-  - [`loadAverage`](#loadaverage)
-  - [`uptime`](#uptime)
-  - [`bootTime`](#boottime)
-  - [`cpuLoadAggregate`](#cpuloadaggregate)
-  - [`cpuTemp`](#cputemp)
-  - [`socketStats`](#socketstats)
-
-Function: [`format`](#format)
-
-Type:
-  - [`FileSystem`](#filesystem-type)
-  - [`Network`](#network-type)
-    - `NetworkAddrs`
-    - `AddrType`
-  - [`Memory`](#memory-type)
-  - [`LoadAverage`](#loadaverage-type)
-  - [`CPULoad`](#cpuload-type)
-  - [`ConvertResult`](#convertresult-type)
-  - [`ConvertOption`](#convertoption-type)
-    - `Advance`
-
-
 ## Documentation
 Create `Stat` class instance in first
 ```typescript
 const stat = new Stat()
 ```
-### `mounts`
+### ***`mounts`*** (Stat class instance method)
 Get filesystem mount information.
 ```typescript
 mounts(): Array<FileSystem>
 ```
 
-### `mountAt`
+### ***`mountAt`*** (Stat class instance method)
 Get a filesystem mount information for the filesystem at a given path.
 ```typescript
 mountAt(at: string): FileSystem
 ```
 
-### `networks`
+### ***`blockDeviceStatistics`*** (Stat class instance method)
+Get block device statistics objects.
+```typescript
+blockDeviceStatistics(): Array<BlockDeviceStats>
+```
+
+### ***`networks`*** (Stat class instance method)
 Get network intefrace information.
 ```typescript
 networks(): Array<Network>
 ```
 
-### `memory`
+### ***`batteryLife`*** (Stat class instance method)
+Get a battery life information object.
+```typescript
+batteryLife(): BatteryLife
+```
+
+### ***`isAcPower`*** (Stat class instance method)
+Get whether AC power is plugged in.
+```typescript
+isAcPower(): boolean
+```
+
+### ***`memory`*** (Stat class instance method)
 Get memory information.
 ```typescript
 memory(): Memory
 ```
 
-### `swap`
+### ***`swap`*** (Stat class instance method)
 Get swap memory information.
 ```typescript
 swap(): Memory
 ```
 
-### `loadAverage`
+### ***`loadAverage`*** (Stat class instance method)
 Get load average.
 ```typescript
 loadAverage(): LoadAverage
 ```
 
-### `uptime`
+### ***`uptime`*** (Stat class instance method)
 Get the system uptime.
 ```typescript
 uptime(): bigint
 ```
 
-### `bootTime`
+### ***`bootTime`*** (Stat class instance method)
 Get the system boot time.
 ```typescript
 bootTime(): Date
 ```
 
-### `cpuLoadAggregate`
+### ***`cpuLoadAggregate`*** (Stat class instance method)
 Get CPU load statistics, average over all CPUs (cores).
 ```typescript
 cpuLoadAggregate(): CPULoad
 ```
 
-### `cpuTemp`
+### ***`cpuTemp`*** (Stat class instance method)
 Get the current CPU temperature in degrees Celsius.
 Depending on the platform, this might be core 0, package, etc.
 ```typescript
 cpuTemp(): number
 ```
 
-### `socketStats`
+### ***`socketStats`*** (Stat class instance method)
 Get information about the number of sockets in use
 ```typescript
 socketStats(): SocketStats
 ```
 
-### `format`
+### ***`format`*** (Function)
 Format the source by ConvertOption
 
 The default of ConvertOption is taking ***1024*** as the advancement, retain ***one decimal*** place
@@ -182,7 +177,7 @@ The default of ConvertOption is taking ***1024*** as the advancement, retain ***
 function format(source: bigint, option?: ConvertOption | undefined | null): ConvertResult
 ```
 
-### `FileSystem` (Type)
+### ***`FileSystem`*** (Type)
 ```typescript
 interface FileSystem {
   /** Used file nodes in filesystem */
@@ -205,7 +200,25 @@ interface FileSystem {
 }
 ```
 
-### `Network` (Type)
+### ***`BlockDeviceStats`*** (Type)
+```typescript
+interface BlockDeviceStats {
+  name: string
+  readIos: bigint
+  readMerges: bigint
+  readSectors: bigint
+  readTicks: bigint
+  writeIos: bigint
+  writeMerges: bigint
+  writeSectors: bigint
+  writeTicks: bigint
+  inFlight: bigint
+  ioTicks: bigint
+  timeInQueue: bigint
+}
+```
+
+### ***`Network`*** (Type)
 ```typescript
 interface Network {
   name: string
@@ -228,7 +241,15 @@ const enum AddrType {
 }
 ```
 
-### `Memory` (Type)
+### ***`BatteryLife`*** (Type)
+```typescript
+interface BatteryLife {
+  remainingCapacity: number
+  remainingTime: bigint
+}
+```
+
+### ***`Memory`*** (Type)
 ```typescript
 interface Memory {
   free: bigint
@@ -237,7 +258,7 @@ interface Memory {
 }
 ```
 
-### `LoadAverage` (Type)
+### ***`LoadAverage`*** (Type)
 ```typescript
 interface LoadAverage {
   one: number
@@ -246,7 +267,7 @@ interface LoadAverage {
 }
 ```
 
-### `CPULoad` (Type)
+### ***`CPULoad`*** (Type)
 ```typescript
 interface CPULoad {
   user: number
@@ -258,7 +279,7 @@ interface CPULoad {
 }
 ```
 
-### `ConvertResult` (Type)
+### ***`ConvertResult`*** (Type)
 ```typescript
 interface ConvertResult {
   value: string
@@ -266,7 +287,7 @@ interface ConvertResult {
 }
 ```
 
-### `ConvertOption` (Type)
+### ***`ConvertOption`*** (Type)
 ```typescript
 interface ConvertOption {
   advance: Advance
@@ -309,4 +330,5 @@ SEE [CHANGELOG](./CHANGELOG.md)
 
 ## Thanks
 [systemstat](https://github.com/unrelentingtech/systemstat)
+
 [napi-rs](https://github.com/napi-rs/napi-rs)
