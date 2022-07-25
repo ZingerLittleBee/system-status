@@ -95,11 +95,7 @@ pub struct _Network {
 
 impl From<&Network> for _Network {
   fn from(network: &Network) -> Self {
-    let addrs: Vec<_NetworkAddrs> = network
-      .addrs
-      .iter()
-      .map(|addr| _NetworkAddrs::from(addr))
-      .collect();
+    let addrs: Vec<_NetworkAddrs> = network.addrs.iter().map(_NetworkAddrs::from).collect();
     _Network {
       name: String::from(network.name.as_str()),
       addrs,

@@ -5,6 +5,7 @@ use napi_derive::napi;
 use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
 
+#[allow(clippy::enum_clike_unportable_variant)]
 #[derive(EnumIter, Debug, PartialEq, Clone, Copy)]
 pub enum Unit {
   B = 1,
@@ -90,7 +91,7 @@ impl Converter<u64> for u64 {
       if current_advance == Unit::PB as u64 as f64 || current_advance == Unit::PIB as u64 as f64 {
         break;
       }
-      current_advance = current_advance * advance;
+      current_advance *= advance;
     }
 
     let unit = Unit::iter().find(|u| *u as u64 as f64 == current_advance);

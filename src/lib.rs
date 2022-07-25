@@ -1,11 +1,7 @@
-#![deny(clippy::all)]
-
 pub mod converter;
 pub mod return_value;
 
-use converter::ConvertOption;
-use converter::ConvertResult;
-use converter::Converter;
+use converter::{ConvertOption, ConvertResult, Converter};
 use napi::bindgen_prelude::BigInt;
 use napi::Result;
 use napi_derive::napi;
@@ -29,7 +25,7 @@ impl Stat {
   #[napi]
   pub fn mounts(&self) -> Result<Vec<_FileSystem>> {
     let m = self.0.mounts()?;
-    Ok(m.iter().map(|fs| _FileSystem::from(fs)).collect())
+    Ok(m.iter().map(_FileSystem::from).collect())
   }
 
   /// Get a filesystem mount information for the filesystem at a given path.
@@ -43,14 +39,14 @@ impl Stat {
   #[napi]
   pub fn block_device_statistics(&self) -> Result<Vec<_BlockDeviceStats>> {
     let b = self.0.block_device_statistics()?;
-    Ok(b.values().map(|b| _BlockDeviceStats::from(b)).collect())
+    Ok(b.values().map(_BlockDeviceStats::from).collect())
   }
 
   /// Get network intefrace information.
   #[napi]
   pub fn networks(&self) -> Result<Vec<_Network>> {
     let nets = self.0.networks()?;
-    Ok(nets.values().map(|netif| _Network::from(netif)).collect())
+    Ok(nets.values().map(_Network::from).collect())
   }
 
   /// Get a battery life information object.
@@ -154,11 +150,18 @@ impl Stat {
 }
 
 #[napi]
-pub fn format(source: BigInt, option: Option<converter::ConvertOption>) -> Result<ConvertResult> {
-  let option = if option.is_some() {
-    option.unwrap()
+pub fn format(source: BigInt, option: Option<ConvertOption>) -> Result<ConvertResult> {
+  let option = if let Some(value) = option {
+    value
   } else {
-    ConvertOption::default()
+    Default::default()
   };
+
   Ok(u64::convert(source.get_u64().1, option))
+}
+
+impl Default for Stat {
+  fn default() -> Self {
+    Self::new()
+  }
 }
