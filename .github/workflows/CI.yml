@@ -15,6 +15,7 @@ env:
       - '**/*.gitignore'
       - .editorconfig
       - docs/**
+    workflow_dispatch:
   pull_request: null
 jobs:
   build:
