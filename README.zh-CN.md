@@ -2,6 +2,20 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
 
 <h1 align="center">ostat</h1>
 
+<div align="center">
+
+[![NPM Version](https://img.shields.io/npm/v/ostat?style=flat-square)](https://www.npmjs.com/package/ostat)
+[![NPM Downloads](https://img.shields.io/npm/dt/ostat?style=flat-square)](https://www.npmjs.com/package/ostat)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/ostat?style=flat-square)
+
+</div>
+<div align="center">
+
+[![GitHub Actions CI](https://img.shields.io/github/workflow/status/ZingerLittleBee/ostat/CI?style=flat-square)](https://github.com/ZingerLittleBee/port-selector/actions)
+![License](https://img.shields.io/github/license/ZingerLittleBee/ostat?style=flat-square)
+
+</div>
+
 ## 简介
 `ostat` 是用于统计系统数据（如cpu、memory、网络、磁盘）的 NodeJS 库
 

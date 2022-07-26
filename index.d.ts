@@ -12,7 +12,7 @@ export const enum Advance {
   /** 1000 */
   Kilobase = 1000,
   /** 1024 */
-  Binary = 1024
+  Binary = 1024,
 }
 export interface ConvertOption {
   advance: Advance
@@ -51,7 +51,7 @@ export interface FileSystem {
 }
 export const enum AddrType {
   Ipv4 = 0,
-  IPv6 = 1
+  IPv6 = 1,
 }
 export interface NetworkAddrs {
   addr: string
