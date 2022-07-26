@@ -2,13 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [`1.0.0`] - Unpublished
+## [`1.0.0`] - 2022-07-27
 
 ### Features
 
-- cpu load average
-- memory and swap
-- network
-- disk mount
-- uptime and bootTime
-- socket stats
+- CPU load
+- load average
+- memory usage
+- uptime / boot time
+- battery life
+- filesystem mounts (and disk usage)
+- disk I/O statistics
+- network interfaces
+- network traffic statistics
+- CPU temperature

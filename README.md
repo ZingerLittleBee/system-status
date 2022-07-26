@@ -24,6 +24,8 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Support Operating Systems](#support-operating-systems)
+    - [API Supported platforms (roughly ordered by completeness of support):](#api-supported-platforms-roughly-ordered-by-completeness-of-support)
+    - [NPM Package Supported platforms](#npm-package-supported-platforms)
   - [Installation](#installation)
 - [Documentation](#documentation)
   - [***`mounts`*** (Stat class instance method)](#mounts-stat-class-instance-method)
@@ -64,6 +66,19 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 - [Node.js](https://nodejs.org) (>= 10.4.0 required, LTS preferred)
 
 ### Support Operating Systems
+
+#### API Supported platforms (roughly ordered by completeness of support):
+
+1. FreeBSD
+2. Linux
+3. OpenBSD
+4. Windows
+5. macOS
+6. NetBSD
+7. more coming soon
+
+#### NPM Package Supported platforms
+
 |                       | node12 | node14 | node16 | node18 |
 | --------------------- | ------ | ------ | ------ | ------ |
 | Windows x64           | ✓      | ✓      | ✓      | ✓      |
@@ -76,6 +91,7 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 | Linux aarch64 gnu     | ✓      | ✓      | ✓      | ✓      |
 | Linux aarch64 musl    | ✓      | ✓      | ✓      | ✓      |
 | FreeBSD x64           | ✓      | ✓      | ✓      | ✓      |
+
 
 ### Installation
 ```bash
