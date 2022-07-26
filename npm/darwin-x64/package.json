@@ -1,0 +1,36 @@
+{
+  "name": "ostat-darwin-x64",
+  "version": "1.0.0",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "ostat.darwin-x64.node",
+  "files": [
+    "ostat.darwin-x64.node"
+  ],
+  "description": "ostat is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
+  "keywords": [
+    "stat",
+    "system",
+    "os",
+    "cpu",
+    "memory",
+    "network",
+    "disk",
+    "status",
+    "info",
+    "rust"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": "https://github.com/ZingerLittleBee/ostat"
+}
