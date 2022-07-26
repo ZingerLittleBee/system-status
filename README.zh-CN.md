@@ -64,13 +64,18 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
 - [Node.js](https://nodejs.org) (>= 10.4.0 required, LTS preferred)
 
 ### 支持的系统
-|                  | node14 | node16 | node18 |
-| ---------------- | ------ | ------ | ------ |
-| Windows x64      | ✓      | ✓      | ✓      |
-| Windows x32      | ✓      | ✓      | ✓      |
-| Linux x64 gnu    | ✓      | ✓      | ✓      |
-| Linux x64 musl   | ✓      | ✓      | ✓      |
-| FreeBSD x64      | ✓      | ✓      | ✓      |
+|                       | node12 | node14 | node16 | node18 |
+| --------------------- | ------ | ------ | ------ | ------ |
+| Windows x64           | ✓      | ✓      | ✓      | ✓      |
+| Windows x86           | ✓      | ✓      | ✓      | ✓      |
+| Windows arm64         | ✓      | ✓      | ✓      | ✓      |
+| macOS x64             | ✓      | ✓      | ✓      | ✓      |
+| macOS aarch64         | ✓      | ✓      | ✓      | ✓      |
+| Linux x64 gnu         | ✓      | ✓      | ✓      | ✓      |
+| Linux x64 musl        | ✓      | ✓      | ✓      | ✓      |
+| Linux aarch64 gnu     | ✓      | ✓      | ✓      | ✓      |
+| Linux aarch64 musl    | ✓      | ✓      | ✓      | ✓      |
+| FreeBSD x64           | ✓      | ✓      | ✓      | ✓      |
 
 ### 安装
 ```bash
