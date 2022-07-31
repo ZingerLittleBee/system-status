@@ -1,5 +1,5 @@
 {
-  "name": "os-stats-win32-x64-msvc",
+  "name": "system-status-win32-x64-msvc",
   "version": "1.0.0",
   "os": [
     "win32"
@@ -7,11 +7,11 @@
   "cpu": [
     "x64"
   ],
-  "main": "os-stats.win32-x64-msvc.node",
+  "main": "system-status.win32-x64-msvc.node",
   "files": [
-    "os-stats.win32-x64-msvc.node"
+    "system-status.win32-x64-msvc.node"
   ],
-  "description": "os-stats is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
+  "description": "system-status is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
   "keywords": [
     "stat",
     "system",
@@ -32,5 +32,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "https://github.com/ZingerLittleBee/os-stats"
+  "repository": "https://github.com/ZingerLittleBee/system-status"
 }

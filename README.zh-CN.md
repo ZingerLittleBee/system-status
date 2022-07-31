@@ -1,23 +1,23 @@
 Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
 
-<h1 align="center">os-stats</h1>
+<h1 align="center">system-status</h1>
 
 <div align="center">
 
-[![NPM Version](https://img.shields.io/npm/v/os-stats?style=flat-square)](https://www.npmjs.com/package/os-stats)
-[![NPM Downloads](https://img.shields.io/npm/dt/os-stats?style=flat-square)](https://www.npmjs.com/package/os-stats)
-![Bundle Size](https://img.shields.io/bundlephobia/minzip/os-stats?style=flat-square)
+[![NPM Version](https://img.shields.io/npm/v/system-status?style=flat-square)](https://www.npmjs.com/package/system-status)
+[![NPM Downloads](https://img.shields.io/npm/dt/system-status?style=flat-square)](https://www.npmjs.com/package/system-status)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/system-status?style=flat-square)
 
 </div>
 <div align="center">
 
-[![GitHub Actions CI](https://img.shields.io/github/workflow/status/ZingerLittleBee/os-stats/CI?style=flat-square)](https://github.com/ZingerLittleBee/port-selector/actions)
-![License](https://img.shields.io/github/license/ZingerLittleBee/os-stats?style=flat-square)
+[![GitHub Actions CI](https://img.shields.io/github/workflow/status/ZingerLittleBee/system-status/CI?style=flat-square)](https://github.com/ZingerLittleBee/port-selector/actions)
+![License](https://img.shields.io/github/license/ZingerLittleBee/system-status?style=flat-square)
 
 </div>
 
 ## 简介
-`os-stats` 是用于统计系统数据（如cpu、memory、网络、磁盘）的 NodeJS 库
+`system-status` 是用于统计系统数据（如cpu、memory、网络、磁盘）的 NodeJS 库
 
 ## 特点
 - CPU 负载
@@ -108,11 +108,11 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
 
 ### 安装
 ```bash
-npm install os-stats
+npm install system-status
 # or
-yarn add os-stats
+yarn add system-status
 # or
-pnpm i os-stats
+pnpm i system-status
 ```
 
 ## 文档

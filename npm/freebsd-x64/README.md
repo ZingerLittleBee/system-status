@@ -1,3 +1,3 @@
-# `os-stats-freebsd-x64`
+# `system-status-freebsd-x64`
 
-This is the **x86_64-unknown-freebsd** binary for `os-stats`
+This is the **x86_64-unknown-freebsd** binary for `system-status`

@@ -1,7 +1,7 @@
 name: CI
 env:
   DEBUG: napi:*
-  APP_NAME: os-stats
+  APP_NAME: system-status
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 'on':
   push:

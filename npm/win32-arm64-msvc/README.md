@@ -1,3 +1,3 @@
-# `os-stats-aarch64-pc-windows-msvc`
+# `system-status-aarch64-pc-windows-msvc`
 
-This is the **aarch64-pc-windows-msvc** binary for `os-stats`
+This is the **aarch64-pc-windows-msvc** binary for `system-status`

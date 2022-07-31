@@ -1,3 +1,3 @@
-# `os-stats-linux-x64-musl`
+# `system-status-linux-x64-musl`
 
-This is the **x86_64-unknown-linux-musl** binary for `os-stats`
+This is the **x86_64-unknown-linux-musl** binary for `system-status`

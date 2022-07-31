@@ -1,3 +1,3 @@
-# `os-stats-linux-arm64-musl`
+# `system-status-linux-arm64-musl`
 
-This is the **aarch64-unknown-linux-musl** binary for `os-stats`
+This is the **aarch64-unknown-linux-musl** binary for `system-status`
