@@ -1,3 +1,3 @@
-# `ostat-aarch64-pc-windows-msvc`
+# `os-stats-aarch64-pc-windows-msvc`
 
-This is the **aarch64-pc-windows-msvc** binary for `ostat`
+This is the **aarch64-pc-windows-msvc** binary for `os-stats`

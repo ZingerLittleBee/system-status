@@ -1,3 +1,3 @@
-# `ostat-linux-arm64-gnu`
+# `os-stats-linux-arm64-gnu`
 
-This is the **aarch64-unknown-linux-gnu** binary for `ostat`
+This is the **aarch64-unknown-linux-gnu** binary for `os-stats`

@@ -1,23 +1,23 @@
 Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 
-<h1 align="center">ostat</h1>
+<h1 align="center">os-stats</h1>
 
 <div align="center">
 
-[![NPM Version](https://img.shields.io/npm/v/ostat?style=flat-square)](https://www.npmjs.com/package/ostat)
-[![NPM Downloads](https://img.shields.io/npm/dt/ostat?style=flat-square)](https://www.npmjs.com/package/ostat)
-![Bundle Size](https://img.shields.io/bundlephobia/minzip/ostat?style=flat-square)
+[![NPM Version](https://img.shields.io/npm/v/os-stats?style=flat-square)](https://www.npmjs.com/package/os-stats)
+[![NPM Downloads](https://img.shields.io/npm/dt/os-stats?style=flat-square)](https://www.npmjs.com/package/os-stats)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/os-stats?style=flat-square)
 
 </div>
 <div align="center">
 
-[![GitHub Actions CI](https://img.shields.io/github/workflow/status/ZingerLittleBee/ostat/CI?style=flat-square)](https://github.com/ZingerLittleBee/port-selector/actions)
-![License](https://img.shields.io/github/license/ZingerLittleBee/ostat?style=flat-square)
+[![GitHub Actions CI](https://img.shields.io/github/workflow/status/ZingerLittleBee/os-stats/CI?style=flat-square)](https://github.com/ZingerLittleBee/port-selector/actions)
+![License](https://img.shields.io/github/license/ZingerLittleBee/os-stats?style=flat-square)
 
 </div>
 
 ## Overview
-`ostat` is a NodeJS lib for statistical system data such as cpu, mem, network, disk.
+`os-stats` is a NodeJS lib for statistical system data such as cpu, mem, network, disk.
 
 ## Features
 - CPU load
@@ -109,11 +109,11 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 
 ### Installation
 ```bash
-npm install ostat
+npm install os-stats
 # or
-yarn add ostat
+yarn add os-stats
 # or
-pnpm i ostat
+pnpm i os-stats
 ```
 
 ## Documentation

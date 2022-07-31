@@ -1,3 +1,3 @@
-# `ostat-freebsd-x64`
+# `os-stats-freebsd-x64`
 
-This is the **x86_64-unknown-freebsd** binary for `ostat`
+This is the **x86_64-unknown-freebsd** binary for `os-stats`

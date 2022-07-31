@@ -1,5 +1,5 @@
 {
-  "name": "ostat-win32-arm64-msvc",
+  "name": "os-stats-win32-arm64-msvc",
   "version": "1.0.0",
   "os": [
     "win32"
@@ -7,11 +7,11 @@
   "cpu": [
     "arm64"
   ],
-  "main": "ostat.win32-arm64-msvc.node",
+  "main": "os-stats.win32-arm64-msvc.node",
   "files": [
-    "ostat.win32-arm64-msvc.node"
+    "os-stats.win32-arm64-msvc.node"
   ],
-  "description": "ostat is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
+  "description": "os-stats is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
   "keywords": [
     "stat",
     "system",
@@ -32,5 +32,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "https://github.com/ZingerLittleBee/ostat"
+  "repository": "https://github.com/ZingerLittleBee/os-stats"
 }

@@ -3150,9 +3150,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ostat@workspace:.":
+"os-stats@workspace:.":
   version: 0.0.0-use.local
-  resolution: "ostat@workspace:."
+  resolution: "os-stats@workspace:."
   dependencies:
     "@napi-rs/cli": ^2.9.0
     "@swc-node/register": ^1.5.1
@@ -4178,7 +4178,7 @@ __metadata:
 
 "typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver

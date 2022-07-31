@@ -1,7 +1,7 @@
 [package]
 authors = ["ZingerLittleBee"]
 edition = "2021"
-name = "ostat"
+name = "os-stats"
 version = "1.0.0"
 
 [lib]

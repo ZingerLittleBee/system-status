@@ -1,9 +1,9 @@
 {
-  "name": "ostat",
+  "name": "os-stats",
   "version": "1.0.0",
-  "description": "ostat is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
+  "description": "os-stats is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
   "main": "index.js",
-  "repository": "https://github.com/ZingerLittleBee/ostat",
+  "repository": "https://github.com/ZingerLittleBee/os-stats",
   "license": "MIT",
   "keywords": [
     "stat",
@@ -22,7 +22,7 @@
     "index.js"
   ],
   "napi": {
-    "name": "ostat",
+    "name": "os-stats",
     "triples": {
       "defaults": true,
       "additional": [

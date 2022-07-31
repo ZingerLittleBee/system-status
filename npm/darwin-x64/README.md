@@ -1,3 +1,3 @@
-# `ostat-darwin-x64`
+# `os-stats-darwin-x64`
 
-This is the **x86_64-apple-darwin** binary for `ostat`
+This is the **x86_64-apple-darwin** binary for `os-stats`

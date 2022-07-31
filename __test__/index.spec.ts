@@ -2,11 +2,11 @@ import test from 'ava'
 
 import { format, Stat } from '../index'
 
-const ostat = new Stat()
+const stat = new Stat()
 
 test('mounts', (t) => {
   try {
-    const mounts = ostat.mounts()
+    const mounts = stat.mounts()
     t.true(mounts.length > 0)
   } catch {
     t.log('not support mounts')
@@ -16,7 +16,7 @@ test('mounts', (t) => {
 
 test('mountAt', (t) => {
   try {
-    const mountAt = ostat.mountAt('/')
+    const mountAt = stat.mountAt('/')
     t.true(mountAt?.files >= 0)
     t.true(mountAt.filesTotal >= 0)
     t.true(mountAt.filesAvail >= 0)
@@ -35,7 +35,7 @@ test('mountAt', (t) => {
 
 test('networks', (t) => {
   try {
-    const net = ostat.networks()
+    const net = stat.networks()
     t.true(net.length >= 0)
   } catch {
     t.log('not support networks')
@@ -45,7 +45,7 @@ test('networks', (t) => {
 
 test('memory', (t) => {
   try {
-    const mem = ostat.memory()
+    const mem = stat.memory()
     t.true(mem.free > 0)
     t.true(mem.used > 0)
     t.true(mem.total > 0)
@@ -57,7 +57,7 @@ test('memory', (t) => {
 
 test('swap', (t) => {
   try {
-    const swap = ostat.swap()
+    const swap = stat.swap()
     t.true(swap.free >= 0)
     t.true(swap.used >= 0)
     t.true(swap.total >= 0)
@@ -69,7 +69,7 @@ test('swap', (t) => {
 
 test('loadAverage', (t) => {
   try {
-    const loadAverage = ostat.loadAverage()
+    const loadAverage = stat.loadAverage()
     t.true(loadAverage.one >= 0)
     t.true(loadAverage.five >= 0)
     t.true(loadAverage.fifteen >= 0)
@@ -81,7 +81,7 @@ test('loadAverage', (t) => {
 
 test('uptime', (t) => {
   try {
-    const uptime = ostat.uptime()
+    const uptime = stat.uptime()
     t.true(uptime > 0)
   } catch {
     t.log('not support uptime')
@@ -91,7 +91,7 @@ test('uptime', (t) => {
 
 test('bootTime', (t) => {
   try {
-    const bootTime = ostat.bootTime()
+    const bootTime = stat.bootTime()
     t.truthy(bootTime)
   } catch {
     t.log('not support bootTime')
@@ -101,7 +101,7 @@ test('bootTime', (t) => {
 
 test('cpuLoadAggregate', (t) => {
   try {
-    const cpuLoadAggregate = ostat.cpuLoadAggregate()
+    const cpuLoadAggregate = stat.cpuLoadAggregate()
     t.true(cpuLoadAggregate.user >= 0)
     t.true(cpuLoadAggregate.nice >= 0)
     t.true(cpuLoadAggregate.system >= 0)
@@ -115,7 +115,7 @@ test('cpuLoadAggregate', (t) => {
 
 test('cpuTemp', (t) => {
   try {
-    const cpuTemp = ostat.cpuTemp()
+    const cpuTemp = stat.cpuTemp()
     t.true(cpuTemp >= 0)
   } catch {
     t.log('not support cpu temp')
@@ -125,7 +125,7 @@ test('cpuTemp', (t) => {
 
 test('socketStats', (t) => {
   try {
-    const socketStats = ostat.socketStats()
+    const socketStats = stat.socketStats()
     t.true(socketStats.tcpSocketsInUse >= 0)
     t.true(socketStats.tcpSocketsOrphaned >= 0)
     t.true(socketStats.udpSocketsInUse >= 0)
@@ -153,7 +153,7 @@ test('format', (t) => {
 
 test('blockDeviceStatistics', (t) => {
   try {
-    const blockDeviceStatistics = ostat.blockDeviceStatistics()
+    const blockDeviceStatistics = stat.blockDeviceStatistics()
     t.true(blockDeviceStatistics.length > 0)
   } catch {
     t.log('not support block device statistics')
@@ -163,7 +163,7 @@ test('blockDeviceStatistics', (t) => {
 
 test('batteryLife', (t) => {
   try {
-    const batteryLife = ostat.batteryLife()
+    const batteryLife = stat.batteryLife()
     t.true(batteryLife.remainingCapacity >= 0)
     t.true(batteryLife.remainingTime >= 0)
   } catch {
@@ -174,7 +174,7 @@ test('batteryLife', (t) => {
 
 test('isAcPower', (t) => {
   try {
-    const isAcPower = ostat.isAcPower()
+    const isAcPower = stat.isAcPower()
     t.is(typeof isAcPower === 'boolean', true)
   } catch {
     t.log('not support AC power')
@@ -184,7 +184,7 @@ test('isAcPower', (t) => {
 
 test('networkStats', (t) => {
   try {
-    const networkStats = ostat.networkStats('eth0')
+    const networkStats = stat.networkStats('eth0')
     t.true(networkStats.rxBytes >= 0)
     t.true(networkStats.txBytes >= 0)
     t.true(networkStats.rxPackets >= 0)

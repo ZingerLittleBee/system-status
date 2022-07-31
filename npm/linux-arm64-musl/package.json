@@ -1,5 +1,5 @@
 {
-  "name": "ostat-linux-arm64-musl",
+  "name": "os-stats-linux-arm64-musl",
   "version": "1.0.0",
   "os": [
     "linux"
@@ -10,11 +10,11 @@
   "libc": [
     "musl"
   ],
-  "main": "ostat.linux-arm64-musl.node",
+  "main": "os-stats.linux-arm64-musl.node",
   "files": [
-    "ostat.linux-arm64-musl.node"
+    "os-stats.linux-arm64-musl.node"
   ],
-  "description": "ostat is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
+  "description": "os-stats is a NodeJS lib for statistical system data such as cpu, mem, network, disk.",
   "keywords": [
     "stat",
     "system",
@@ -35,5 +35,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "https://github.com/ZingerLittleBee/ostat"
+  "repository": "https://github.com/ZingerLittleBee/os-stats"
 }

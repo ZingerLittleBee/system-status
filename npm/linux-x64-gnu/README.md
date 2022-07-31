@@ -1,3 +1,3 @@
-# `ostat-linux-x64-gnu`
+# `os-stats-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `ostat`
+This is the **x86_64-unknown-linux-gnu** binary for `os-stats`
