@@ -15,7 +15,8 @@
     "disk",
     "status",
     "info",
-    "rust"
+    "rust",
+    "node"
   ],
   "files": [
     "index.d.ts",
