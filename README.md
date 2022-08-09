@@ -71,6 +71,7 @@ Language : 🇺🇸 English | [🇨🇳 简体中文](./README.zh-CN.md)
 - [How to Develop](#how-to-develop)
   - [Development requirements](#development-requirements)
   - [Test in local](#test-in-local)
+- [Found an issue or have a proposal](#found-an-issue-or-have-a-proposal)
 - [Release Notes](#release-notes)
 - [Thanks](#thanks)
 
@@ -378,6 +379,9 @@ export const enum Advance {
 - yarn
 - yarn build
 - yarn test
+
+## Found an issue or have a proposal
+[Create an issue](https://github.com/zingerlittlebee/system-status/issues/new)
 
 ## Release Notes
 SEE [CHANGELOG](./CHANGELOG.md)

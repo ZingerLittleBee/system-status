@@ -71,6 +71,7 @@ Language : [🇺🇸 English](./README.md) | 🇨🇳 简体中文
 - [如何开发](#如何开发)
   - [开发环境要求](#开发环境要求)
   - [本地测试](#本地测试)
+- [发现问题或提出建议](#发现问题或提出建议)
 - [发行说明](#发行说明)
 - [感谢](#感谢)
 
@@ -378,6 +379,9 @@ export const enum Advance {
 - yarn
 - yarn build
 - yarn test
+
+## 发现问题或提出建议
+[Create an issue](https://github.com/zingerlittlebee/system-status/issues/new)
 
 ## 发行说明
 SEE [CHANGELOG](./CHANGELOG.md)
